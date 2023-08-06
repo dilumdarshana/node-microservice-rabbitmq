@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+  micro_mongo:
+    container_name: 'micro_mongo'
+    image: mongo
+    expose:
+      - 27020
+    ports:
+      - 27020:27017
+    volumes:
+      - ./data/mongo:/data/db
+  micro_mysql:
+    container_name: 'micro_mysql'
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'micro_service'
+      MYSQL_ROOT_PASSWORD: 'password'
+    expose:
+      - 3306
+    ports:
+      - 3306:3306
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+  micro_rabbit:
+    container_name: 'micro_rabbit'
+    image: rabbitmq:management
+    ports:
+        - 5672:5672
+        - 15672:15672
+    volumes:
+        - ./data/rabbitmq/data/:/var/lib/rabbitmq/
+        - ./data/rabbitmq/log/:/var/log/rabbitmq
