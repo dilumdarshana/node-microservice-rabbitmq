@@ -1,11 +1,11 @@
-import express, { Request, Response } from 'express';
+import express, { Request, Response, Application } from 'express';
 import cors from 'cors';
 import { Product } from './entities/product';
 import { dataSource } from './utils/mongo_connector';
 import amqp from 'amqplib';
 
 (async () => {
-  const app = express();
+  const app: Application = express();
 
   const port = process.env.port || 5000;
   const queue_created = 'product_created';

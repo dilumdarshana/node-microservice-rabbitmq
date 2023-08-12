@@ -1,12 +1,12 @@
-import express, { Request, Response } from 'express';
+import express, { Request, Response, Application } from 'express';
 import cors from 'cors';
 import { dataSource } from './utils/mysql_connector';
 import { Product } from './entity/product';
-import { Product as ProductType} from './interfaces/product';
+import { Product as ProductType } from './interfaces/product';
 import amqp from 'amqplib';
 
 (async () => {
-  const app = express();
+  const app: Application = express();
 
   const port = process.env.port || 3000;
   const queueCreated = 'product_created';
