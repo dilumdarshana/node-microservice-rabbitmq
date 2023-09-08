@@ -1,6 +1,6 @@
 # Simple Micro Service based on RabbitMQ
 
-![architecture](https://github.com/dilumdarshana/node-microservice-rabbitmq/assets/6856894/a71b94c3-01e6-4079-8e8c-5e7e1b00eada)
+![Micro_service](https://github.com/dilumdarshana/node-microservice-rabbitmq/assets/6856894/68aad645-1cdd-4f9a-83f9-a1994612905b)
 
 
 ## Technologies used
